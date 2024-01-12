@@ -1,1 +1,1 @@
-Git Basic
+Ssafy Study
