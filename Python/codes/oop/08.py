@@ -12,7 +12,7 @@ class Circle: # __str__ # 매직 메서드
 c1 = Circle(10)
 c2 = Circle(1)
 
-print(c1.area())
+print(c1.area()) # 314.0
 
 print(c1)  # [원] radius: 10
 print(c2)  # [원] radius: 1
