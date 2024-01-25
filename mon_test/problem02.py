@@ -1,7 +1,11 @@
 ############## 주의 ##############
 # 입력을 받기위한 input 함수는 절대 사용하지 않습니다.
 def over(score_list):
-    pass
+    new_list = []
+    for i in score_list:
+        if i >= 60:
+            new_list.append(1)
+    return len(new_list)
     # 여기에 코드를 작성합니다.
 
 

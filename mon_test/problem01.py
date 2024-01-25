@@ -1,8 +1,12 @@
 ############## 주의 ##############
 # 입력을 받기위한 input 함수는 절대 사용하지 않습니다.
 # Python 내장함수 max() 사용 시 감점
-def max_score(score_list):
-    pass
+def max_score(scores1):
+    max_score = scores1[0]
+    for i in scores1:
+        if i > max_score:
+            max_score = i
+    return max_score
     # 여기에 코드를 작성합니다.
 
 
@@ -15,4 +19,4 @@ def max_score(score_list):
 ############## 테스트 코드 삭제 금지 #################
 scores1 = [30, 60, 90, 70]
 print(max_score(scores1)) # 90
-#####################################################
+####################################################

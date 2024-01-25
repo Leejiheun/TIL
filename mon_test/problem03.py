@@ -2,7 +2,7 @@
 # 입력을 받기위한 input 함수는 절대 사용하지 않습니다.
 # 리스트 메서드 .count() 를 사용시 감점
 def menu_count(restorant_dict):
-    pass
+    return len(restorant_dict['menus'])
     # 여기에 코드를 작성합니다.
     
 

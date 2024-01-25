@@ -1,7 +1,12 @@
 ############## 주의 ##############
 # 입력을 받기위한 input 함수는 절대 사용하지 않습니다.
 def turn(temperature_list):
-    pass
+    new_list = []
+    new_list2 = []
+    for i in temperature_list:
+        if len(new_list) == 0 and len(new_list2) == 0:
+            new_list.append(i[0]) and new_list2.append(i[1])
+    print(new_list2)
     # 여기에 코드를 작성합니다.
 
 
