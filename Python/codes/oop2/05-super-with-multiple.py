@@ -22,3 +22,4 @@ class D(B, C):
 
 
 obj = D()
+# pr
