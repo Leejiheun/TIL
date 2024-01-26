@@ -399,15 +399,159 @@ print(volatility)
 #         print(i[1]-i[2])
 
 # 200
-bene = 0
-for i in ohlc[1:]:
-    bene += i[3]-i[0]
-print(bene)
+# bene = 0
+# for i in ohlc[1:]:
+#     bene += i[3]-i[0]
+# print(bene)
 
-# 201
+# # 201
+# def print_coin():
+#     print("비크코인")
+
+# # 202
+# print_coin()
+
+# # 203
+# for i in range(100):
+#     print_coin()
+
+# 204
 def print_coin():
-    print("비크코인")
-# 202
-print_coin(100)
+    for i in range(100):
+        print("비트코인")
+# print_coin()
 
-# 파이썬300제
+# 215
+def print_with_smile(str):
+    print(str + ':D')
+
+# # 215
+# def print_with_smile(str):
+#     print(str + ':D')
+
+# print_with_smile('안녕하세요')
+    
+# 217
+def print_upper_price(price):
+    print(price * 0.3)
+
+# 218
+def print_sum(x,y):
+    print(x+y)
+
+#219
+def print_arithmetic_operation(x, y):
+    print(f'{x} + {y} = {x+y}')
+    print(f'{x} - {y} = {x-y}')
+    print(f'{x} * {y} = {x*y}')
+    print(f'{x} / {y} = {x/y}')
+
+# 220
+# def print_max(x,y,z):
+#     if x > y:
+#         if x > z:
+#             print(x)
+#         else:
+#             print(z)
+#     elif y > z:
+#         print(y)
+#     else:
+#         print(z)
+# print_max(1,2,3)
+# # 220
+# def prin_max(a,b,c):
+#     max_a = 0
+#     if a > max_a:
+#         a = max_a
+#     if b > max_a:
+#         b = max_a
+#     if c > max_a:
+#         c = max_a
+#     print(max_a)
+# prin_max(1,2,3)
+
+def print_max(a, b, c) :
+    max_val = 0
+    if a > max_val :
+        max_val = a
+    if b > max_val :
+        max_val = b
+    if c > max_val :
+        max_val = c
+    print(max_val)
+print_max(1,2,3)
+
+# 221
+def print_reverse(i):
+    print(i[::-1])
+print_reverse('python')
+
+# 222
+def print_score(n_list):
+    print(sum(n_list)/len(n_list))
+
+# 223
+# def print_even(n2_list):
+#     for i in len(n2_list):
+#         if n2_list[i] % 2 == 0:
+#             print(n2_list[i])
+# print_even ([1, 3, 2, 10, 12, 11, 15])
+
+#223
+def print_even(n2_list):
+    for i in n2_list:
+        if i % 2 == 0:
+            print(i)
+print_even ([1, 3, 2, 10, 12, 11, 15])
+
+#224
+def print_keys(dic):
+    for i in dic.keys():
+        print(i)
+print_keys ({"이름":"김말똥", "나이":30, "성별":0})
+
+# 225
+def print_value_by_key(my_dict, ohlc):
+    print(my_dict[ohlc])
+
+my_dict = {"10/26" : [100, 130, 100, 100],
+           "10/27" : [10, 12, 10, 11]}
+
+print_value_by_key  (my_dict, "10/26")
+
+# 226
+# def print_5xn(string):
+#     print(string[:5])
+#     print(string[5:10])
+# print_5xn("아이엠어보이유알어걸")
+
+#227
+def print_mxn(str, i):
+    print(str[:i])
+
+# #232
+# def make_url(url):
+#     print(f'ww.{url}.com')
+# make_url("naver")
+
+# 233
+def make_list(list):
+    new_list = []
+    for i in list:
+        new_list.append(i)
+    print(new_list)
+
+make_list("abcd")
+
+# 234
+def pickup_even(list):
+    new_list2 = []
+    for i in list:
+        if i % 2 == 0:
+            new_list2.append(i)
+    print(new_list2)
+pickup_even([3, 4, 5, 6, 7, 8])
+
+# 235
+def convert_int():
+    
