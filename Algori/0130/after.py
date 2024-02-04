@@ -7,7 +7,7 @@ for tc in range(1, T+1):
     for number in cards: # 요소 반복형태
         counts[number] += 1 # 현재 넘버 위치에
 
-    print(counts)
+    # print(counts)
     # [0, 0, 0, 0, 0, 0, 3, 3, 0, 0]
 
     is_babygin = 0
@@ -33,6 +33,40 @@ for tc in range(1, T+1):
 
     # 2개의 조건을 모두 만족한 것이 있는지 확인
     if is_babygin == 2:
-        print('베이비진')
+        print(f'#{tc} "true"')
     else:
-        print('아님')
+        print(f'#{tc} "false"')
+    # if is_babygin == 2:
+    #     print('베이비진')
+    # else:
+    #     print('아님')
+    # print(f'#{tc} {"true" if is_babygin == 2 else "false"}')'
+        
+
+T = int(input())
+for tc in range(1, T+1):
+    arr = list(map(int, input().strip()))
+    # 숫자가 붙어 있는 상태이므로 split은 쓰지 않음
+    counts = [0] * 12
+    
+    for i in arr:
+        counts[i] += 1
+    i = 0
+    is_babygin = 0
+    while i < 10:
+        if counts[i] >= 3:
+            counts[i] -= 3
+            is_babygin += 1
+            continue 
+        # run인지 확인
+        if counts[i] >= 1 and counts[i+1] >= 1 and counts[i+2] >= 1:
+            counts[i] -= 1
+            counts[i + 1] -= 1
+            counts[i + 2] -= 1
+            is_babygin += 1
+            continue
+        i += 1
+    if is_babygin == 2:
+        print(f'#{tc} true')
+    else:
+        print(f'#{tc} false')

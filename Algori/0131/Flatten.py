@@ -41,3 +41,45 @@ for tc in range(T):  # 각 테스트 케이스에 대해/직접 10을 넣어도 
     if not counted[end]:  # 가장 높은 높이의 상자가 없다면
         end -= 1  # 가장 높은 높이를 1 감소시킵니다.
     print(f'#{tc+1} {end - start}')  # 가장 높은 높이와 가장 낮은 높이의 차이를 출력합니다.
+
+
+for test in range(10):
+    dump = int(input())
+    lst = list(map(int, input().split()))
+    for d in range(dump):
+        max_ = max(lst)
+        min_ = min(lst)
+        lst[lst.index(max_)] = max_-1
+        lst[lst.index(min_)] = min_+1
+ 
+    print(f"#{test+1} {max(lst)-min(lst)}")
+
+T = 10
+for x in range(T):
+    total = int(input())
+    testcase = list(map(int, input().strip().split(" ")))
+    for i in range(total):
+        max_box = max(testcase)
+        min_box = min(testcase)
+        max_index = testcase.index(max(testcase))
+        min_index = testcase.index(min(testcase))
+        max_box -= 1
+        min_box += 1
+        testcase[max_index] = max_box
+        testcase[min_index] = min_box
+    max_box = max(testcase)
+    min_box = min(testcase)
+    print(f'#{x+1} {max_box - min_box}')
+
+
+T = 10
+for tc in range(1, T+1):
+    N = int(input())
+    arr = list(map(int, input().split()))
+    for i in range(N):
+        max_num = max(arr)
+        min_num = min(arr)
+        arr[arr.index(max_num)] = max_num - 1
+        arr[arr.index(min_num)] = min_num - 1
+        
+    print(f'#{tc} {max(arr)-min(arr)}')

@@ -1,11 +1,6 @@
 # 첫 줄에 테스트 케이스 개수 T가 주어진다.  ( 1 ≤ T ≤ 50 )
 T = int(input()) # 숫자 (int 생략하면 str 상태)
-# TypeError: 'int' object is not iterable
-print('T', T)
-# for t in T: TypeError: 'int' object is not iterable
-
 import math
-
 def solution1(arr, neighbor):
     # 인덱스를 활용하여 특정한 범위의 합들을 연속적으로 구해주고
     # 해당 합들의 크기를 비교하여 최댓값, 최솟값을 구함
@@ -17,7 +12,6 @@ def solution1(arr, neighbor):
     # 첫번째의 값 기준으로 삼기 <-> 첫번째 원소의 값.(X)
     sum_val = sum(arr[0:neighbor])  # 첫 구간의 합
     min_val = max_val = sum_val
-    print('min', min_val, 'max', max_val, 'sum', sum_val)
     # for i in range(1, len(arr) - neighbor + 1): # 첫구간의 합을 최대/최소로 써줬을 경우
     for i in range(0, len(arr) - neighbor + 1):
         sum_val = sum(arr[i:i+neighbor])
@@ -48,3 +42,21 @@ for t in range(T):
     a = list(map(int, input().split()))
     print(a)
     print(f'#{t+1} {solution1(a, M)}')
+
+
+T = int(input())
+ 
+for test_case in range(1, T+1):
+    N, M = list(map(int, input().split()))
+    numbers = list(map(int, input().split()))
+    
+    temp = []
+    for i in range(N-M+1):
+        val = sum(numbers[i:i+M])
+        temp.append(val)
+ 
+        minimum = min(temp)
+        maximum = max(temp)
+        result = maximum - minimum
+ 
+    print(f'#{test_case} {result}')
