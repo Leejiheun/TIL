@@ -32,3 +32,62 @@ for _ in range(T):
             if num_list.index(arr[tc]) == i:
                 print(arr[tc], end=' ')
         print()
+
+
+# 제갈덕님 풀이
+# 1
+import sys
+sys.stdin = open("input.txt", "r")
+
+code_list = ["ZRO", "ONE", "TWO", "THR", "FOR", "FIV", "SIX", "SVN", "EGT", "NIN"]
+
+
+# "TWO"를 입력하면 2를 반환하고 싶다.
+def decode(n):
+    return code_list.index(n)
+
+
+# 2를 입력하면 "TWO"를 반환하고 싶다.
+def encode(n):
+    return code_list[n]
+
+
+T = int(input())
+
+for testcase in range(1, T + 1):
+    t, N = input().split()
+    # n = int(N)
+    lst = list(map(decode, input().split()))
+    lst.sort()
+    result = list(map(encode, lst))
+    print(t, *result)
+
+#2
+import sys
+sys.stdin = open("input.txt", "r")
+
+# 2. Not using function
+
+T = int(input())
+code_list = ["ZRO", "ONE", "TWO", "THR", "FOR", "FIV", "SIX", "SVN", "EGT", "NIN"]
+
+for testcase in range(1, T + 1):
+    _ = input() # 앞에서 봤듯이 쓸모없는 input이었다.
+    lst = list(input().split())
+
+    lst_decoded = []
+    for number in lst:
+        lst_decoded.append(
+            code_list.index(number)
+        ) # .index()로 append된 원소들은 모두 int이다. 따라서 lst_decoded는 int로만 이루어진 list
+
+    # int들로 이루어진 list를 sort
+    lst_decoded.sort()
+
+    # 이름은 result지만, lst_encoded라고 봐도 된다.
+    result = []
+    for i in lst_decoded:
+        result.append(code_list[i])
+
+    # print(f'{testcase}, {*result}') <= 얘는 왜인지 모르겠는데 안됨
+    print(f'#{testcase}', *result)
