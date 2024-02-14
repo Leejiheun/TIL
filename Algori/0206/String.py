@@ -35,15 +35,13 @@ def bf(pattern, text):
             i = i - j + 1
             j = 0
         return count
-
-
-# # T = 10
-# for _ in range(T):
-#     tc = input() # 그대로 프린트돼서 굳이 int안해도 됨
-#     pattern = input()
-#     text = input()
-#     result = bf(pattern, text)
-#     print(f'#{tc} {result}')
+T = 10
+for _ in range(T):
+    tc = input() # 그대로 프린트돼서 굳이 int안해도 됨
+    pattern = input()
+    text = input()
+    result = bf(pattern, text)
+    print(f'#{tc} {result}')
 
 # 2. 파이썬 내장 메서드 사용
 # for in range(10):

@@ -26,7 +26,7 @@ for _ in range(T):
     arr = list(map(str, input().split()))
     num_list = ['ZRO', 'ONE', 'TWO', 'THR', 'FOR', 'FIV', 'SIX', 'SVN', 'EGT', 'NIN']
     M = int(M)
-    print(N)
+    # print(N)
     for i in range(10):
         for tc in range(M):
             if num_list.index(arr[tc]) == i:
@@ -91,3 +91,16 @@ for testcase in range(1, T + 1):
 
     # print(f'{testcase}, {*result}') <= 얘는 왜인지 모르겠는데 안됨
     print(f'#{testcase}', *result)
+
+
+# 연습
+T = int(input())
+N, M = map(int, input().split())
+arr = list(map(int, input().split()))
+new_list = ['ZRO', 'ONE', 'TWO', 'THR', 'FOR', 'FIV', 'SIX', 'SVN', 'EGT', 'NIN']
+
+for tc in range(1, T+1):
+    M = int(M)
+    for i in range(M):
+        if new_list.index(arr[i]) == i:
+            
