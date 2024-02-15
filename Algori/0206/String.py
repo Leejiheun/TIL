@@ -15,8 +15,8 @@
 # 1. 고지식한(브루트포스) 문제로 풀어보기
 # text가 원본을 유지하는게 있고, 소거하는 방법이 있음
 def bf(pattern, text):
-    len_t = len(text)
-    len_p = len(pattern)
+    len_t = len(text) # 찾을 텍스트
+    len_p = len(pattern) # 전체 텍스트
     i = 0 # 전체 텍스트에서 탐색에 쓸 인덱스
     j = 0 # 패턴 탐색에 쓸 인덱스
     count = 0 # 전체 변수가
@@ -34,6 +34,7 @@ def bf(pattern, text):
             count += 1
             i = i - j + 1
             j = 0
+<<<<<<< HEAD
         return count
 T = 10
 for _ in range(T):
@@ -42,21 +43,33 @@ for _ in range(T):
     text = input()
     result = bf(pattern, text)
     print(f'#{tc} {result}')
+=======
+    return count
+
+
+# # T = 10
+# for _ in range(T):
+#     tc = input() # 그대로 프린트돼서 굳이 int안해도 됨
+#     pattern = input()
+#     text = input()
+#     result = bf(pattern, text)
+#     print(f'#{tc} {result}')
+>>>>>>> 08effbf3d3e917fcbae0451bdec0b40f9dfe9c5d
 
 # 2. 파이썬 내장 메서드 사용
-# for in range(10):
-#     tc = int(input())
-#     F = input()
-#     arr = input()
-#     i = 0
-#     cnt = 0
-#     while i < len(arr):
-#         if F[0] == arr[i]:
-#             if F[:] == arr[i:i+len(F)]:
-#                 cnt += 1
-#                 i += len(F)
-#             else:
-#                 i += 1
-#         else:
-#             i += 1
-#     print(f'#{tc} {cnt}')
+for in range(10):
+    tc = int(input())
+    F = input()
+    arr = input()
+    i = 0
+    cnt = 0
+    while i < len(arr):
+        if F[0] == arr[i]:
+            if F[:] == arr[i:i+len(F)]:
+                cnt += 1
+                i += len(F)
+            else:
+                i += 1
+        else:
+            i += 1
+    print(f'#{tc} {cnt}')
