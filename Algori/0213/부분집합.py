@@ -1,19 +1,23 @@
-def f(i, k):
-    if i==k:
-        for j in range(k):
-            if bit[j]:
-                print(arr[j], end=' ')
-        print()
+def f(i, k, s):  # i-1까지 선택한 원소의 합
+    global min_v
+    if i == k:
+        # print(*P)
+        if min_v > s:
+            min_v = s
+    elif s >= min_v:
+        return
     else:
-        # for j in range(2):
-        #     bit[i] = j
-        #     f(i+1, k)
-        bit[i] = 1
-        f(i+1, k)
-        bit[i] = 0
-        f(i+k, k)
+        for j in range(i, k):  # P[i] 자리에 올 원소 P[j]를 결정
+            P[i], P[j] = P[j], P[i]  # P[i] <-> P[j]
+            f(i + 1, k, s + arr[i][P[i]])
+            P[i], P[j] = P[j], P[i]  # 교환전으로 복구
 
-N =4
-arr =[1, 2, 3, 4]
-bit = [0] * N # bit[i] : arr[i]가 부분집합에 포함되었는지 나타내는 배열
-f(0, N)         # bit[i]에 1또는 0을 채우고, N개의 원소가 결정되면 부분집합을 출력
+
+T = int(input())
+for tc in range(1, T + 1):
+    N = int(input())
+    arr = [list(map(int, input().split())) for _ in range(N)]
+    P = [i for i in range(N)]
+    min_v = 100
+    f(0, N, 0)
+    print(f'#{tc} {min_v}')

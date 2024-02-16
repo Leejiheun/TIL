@@ -44,7 +44,7 @@ for tc in range(1, T+1):  # 각 테스트 케이스에 대해
                 break # 델타(방향)에 대한 break
     print(f'#{tc} {result}')
 
-            # # 미로 범위를 넘는지 확인 방법2
+            # 미로 범위를 넘는지 확인 방법2
             if 0 <= ni < N and 0 <= nj < N and not visited[ni][nj]: # 보드 내에 있고 아직 방문하지 않은 위치라면
                 if maze[ni][nj] == '0':  # 이동 가능한 위치라면
                     st.append((ni, nj))  # 스택에 추가합니다.
