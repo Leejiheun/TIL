@@ -15,11 +15,11 @@ for tc in range(T):
         for k in range(4):
             ni = t[0] + di[k]
             nj = t[1] + dj[k]
-        if arr[ni][nj] == '0' and visited[ni][nj] == 0:
-            q.append([ni, nj])  # 인큐
-            visited[ni][nj] = 1  # 방문표시
-        if arr[ni][nj] == '3':
-            result = 1
-            break
+            if arr[ni][nj] == '0' and visited[ni][nj] == 0:
+                q.append([ni, nj])  # 인큐
+                visited[ni][nj] = 1  # 방문표시
+            if arr[ni][nj] == '3':
+                result = 1
+                break
 
     print(f'#{tc+1} {result}')
