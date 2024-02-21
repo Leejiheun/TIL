@@ -2,12 +2,16 @@
 T = 10
 for tc in range(T):
     _ = int(input())
+
     di = [0, 1, 0, -1]
     dj = [1, 0, -1, 0]
+    
     arr = [input() for i in range(16)]
-    q = []  # 큐 생성
+
     visited = [[0] * 16 for _ in range(16)]  # visited
+    q = []  # 큐 생성
     q.append([1, 1])  # 시작점 인큐
+
     result = 0
 
     while q:    # 처리안된 정점이 남아있으면,,
