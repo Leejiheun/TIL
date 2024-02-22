@@ -57,18 +57,18 @@ for test in range(10):
 T = 10
 for x in range(T):
     total = int(input())
-    testcase = list(map(int, input().strip().split(" ")))
+    arr = list(map(int, input().strip().split(" ")))
     for i in range(total):
-        max_box = max(testcase)
-        min_box = min(testcase)
-        max_index = testcase.index(max(testcase))
-        min_index = testcase.index(min(testcase))
+        max_box = max(arr)
+        min_box = min(arr)
+        max_index = arr.index(max(arr))
+        min_index = arr.index(min(arr))
         max_box -= 1
         min_box += 1
-        testcase[max_index] = max_box
-        testcase[min_index] = min_box
-    max_box = max(testcase)
-    min_box = min(testcase)
+        arr[max_index] = max_box
+        arr[min_index] = min_box
+    max_box = max(arr)
+    min_box = min(arr)
     print(f'#{x+1} {max_box - min_box}')
 
 
@@ -80,6 +80,6 @@ for tc in range(1, T+1):
         max_num = max(arr)
         min_num = min(arr)
         arr[arr.index(max_num)] = max_num - 1
-        arr[arr.index(min_num)] = min_num - 1
+        arr[arr.index(min_num)] = min_num + 1
         
     print(f'#{tc} {max(arr)-min(arr)}')
