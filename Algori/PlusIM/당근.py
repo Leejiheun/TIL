@@ -10,11 +10,10 @@ for tc in range(1, T+1):
     for i in range(1, n):
         if lst[i] > lst[i-1]:
             cnt += 1 # 당근이 커진 횟수 1 증가
-            Max = max(Max, cnt)
-            # if Max < cnt:
-            #     Max = cnt
+            if Max < cnt:
+                Max = cnt
         else:
             cnt = 0
-    ans = Max+1 # 당근이 커진 횟수 +1 -> 커진 당근의 개수
+    ans = Max + 1 # 당근이 커진 횟수 +1 -> 커진 당근의 개수
 
     print(f'#{tc} {ans}')

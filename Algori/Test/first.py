@@ -53,7 +53,7 @@ for tc in range(1, T+1):
             cnt = 0
             for di in range(M):
                 for dj in range(M):
-                    catch += arr[i+di][j+dj]
+                    cnt += arr[i+di][j+dj]
             if max_v < cnt:
                 max_v = cnt
     print(f'#{tc} {max_v}')
