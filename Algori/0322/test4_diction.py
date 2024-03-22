@@ -46,6 +46,7 @@ for tc in range(1, T+1):
         print(d, hex_to_bin[d])
         bin_result2 += hex_to_bin[d]
     print(bin_result2)
+    
     hex_result2 = ''
     for i in range(0, len(bin_result2), 4):
         print(i, i+4, bin_result2[i:i+4])
