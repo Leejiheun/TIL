@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h1>할 일 목록 상세 페이지</h1>
+
+  <ul>
+    {% if work %}
+      <li>
+        <a href="{% url 'todos:detail' work %}">{{ work }}</a>
+
+        {% comment %} <a href="/todos/{{ work }}">{{ work }}</a> {% endcomment %}
+      </li>
+    {% else %}
+      <li>아직 등록 된 할 일이 없습니다.</li>
+    {% endif %}
+  </ul>
+{% endblock %}

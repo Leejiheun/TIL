@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h1>이곳에 할 일을 생성합니다.</h1>
+
+  <form action="{% url 'todos:index' %}">
+    <label for="create_todo"></label>
+    <input type="text" id="create_todo" name="joy" />
+    <input type="submit" value="go" />
+  </form>
+{% endblock %}
