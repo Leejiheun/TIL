@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1>Articles</h1>
+  {% comment %} view에 있는 context에 articles이다. {% endcomment %}
+  {% for article in articles %}
+    <p>{{ article.pk }}</p>
+    <p>{{ article.title }}</p>
+  {% endfor %}
+  {% comment %} <a href="{% url "articles:index" %}"></a> {% endcomment %}
+</body>
+</html>
