@@ -20,41 +20,52 @@ def detail(request, pk):
     return render(request, 'articles/detail.html', context)
 
 
-# def new(request):
-#     form = ArticleForm()
-#     context = {
-#         'form':form,
-#     }
-#     return render(request, 'articles/new.html', context)
-
-
-# def create(request):
-#     title = request.POST.get('title')
-#     content = request.POST.get('content')
-#     # article = Article(title=title, content=content)
-#     # article.save()
-#     form = ArticleForm(request.POST)
-#     if form.is_valid():
-#         article = form.save()
-#         return redirect('articles:detail', article.pk)
-#     context = {
-#         'form' : form,
-#     }
-#     return render(request, 'articles/new.html', context)
-
-def create(request):
-    form = ArticleForm(request.POST)
-    if request.method == 'POST':
-        if form.is_valid():
-            article = form.save()
-            return redirect('articles:detail', article.pk)
-    else:
-        form = ArticleForm()
+def new(request):
+    form = ArticleForm()
     context = {
         'form':form,
     }
-    return render(request, 'articles/create.html', context)
+    return render(request, 'articles/new.html', context)
 
+
+def create(request):
+    # title = request.POST.get('title')
+    # content = request.POST.get('content')
+    # article = Article(title=title, content=content)
+    # article.save()
+    form = ArticleForm(request.POST)
+    if form.is_valid():
+        article = form.save()
+        return redirect('articles:detail', article.pk)
+    context = {
+        'form' : form,
+    }
+    return render(request, 'articles/new.html', context)
+
+
+# def create(request):
+# if request.method == 'POST':
+# form = ArticleForm(request.POST)
+#         if form.is_valid():
+#             article = form.save()
+#             return redirect('articles:detail', article.pk)
+#     else:
+#         form = ArticleForm()
+#     context = {
+#         'form':form,
+#     }
+#     return render(request, 'articles/create.html', context)
+
+
+def create(request):
+    if request.method == 'POST':
+        pass
+    else:
+        form = ArticleForm()
+    context = {
+        'form': form,
+    }
+    return render(request, 'articles/create.html', context)
 
 
 def delete(request, pk):

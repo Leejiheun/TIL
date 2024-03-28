@@ -7,10 +7,15 @@
 </head>
 <body>
   <h1>Articles</h1>
+  <a href="{% url "articles:create" %}">[CREATE]</a>
   {% comment %} view에 있는 context에 articles이다. {% endcomment %}
   {% for article in articles %}
     <p>{{ article.pk }}</p>
-    <p>{{ article.title }}</p>
+    <a href="{% url "articles:detail" article.pk %}">
+      <p>{{ article.title }}</p>
+    </a>
+    
+    <hr>
   {% endfor %}
   {% comment %} <a href="{% url "articles:index" %}"></a> {% endcomment %}
 </body>

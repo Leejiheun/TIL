@@ -13,5 +13,12 @@
   <h2>{{ article.content }}</h2>
   <h2>{{ article.created_at }}</h2>
   <h2>{{ article.updated_at }}</h2>
+  <a href="{% url "articles:update" article.pk %}">[수정]</a>
+  <a href="{% url "articles:index" %}">[메인]</a>
+  <form action="{% url "articles:delete" article.pk%}" method = "POST">
+    {% comment %} POST는 토큰이 필수 {% endcomment %}
+    {% csrf_token %}
+     <input type="submit" value="삭제">
+  </form>
 </body>
 </html>
